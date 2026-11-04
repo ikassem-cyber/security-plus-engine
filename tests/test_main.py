@@ -428,7 +428,7 @@ class TestConceptValidation(unittest.TestCase):
     def test_all_mapped_concepts_are_loaded(self):
         valid_concepts = load_valid_concept_ids()
 
-        self.assertEqual(len(valid_concepts), 46)
+        self.assertEqual(len(valid_concepts), 64)
 
 
 class TestAdaptiveQuestionSelection(unittest.TestCase):

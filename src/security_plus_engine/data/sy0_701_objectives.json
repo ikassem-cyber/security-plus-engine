@@ -1013,7 +1013,311 @@
         {
           "id": "1.3",
           "title": "Explain the importance of change management processes and the impact to security",
-          "concepts": []
+          "concepts": [
+            {
+              "concept_id": "1.3-C01",
+              "name": "Approval process",
+              "category": "Business processes",
+              "keywords": [
+                "change authorization",
+                "change advisory board",
+                "CAB",
+                "formal approval",
+                "emergency approval"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C02",
+              "name": "Ownership",
+              "category": "Business processes",
+              "keywords": [
+                "change owner",
+                "accountability",
+                "responsibility",
+                "implementation owner"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C03",
+              "name": "Stakeholders",
+              "category": "Business processes",
+              "keywords": [
+                "affected parties",
+                "stakeholder notification",
+                "communication",
+                "business units"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C04",
+              "name": "Impact analysis",
+              "category": "Business processes",
+              "keywords": [
+                "risk assessment",
+                "business impact",
+                "security impact",
+                "operational impact"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C05",
+              "name": "Test results",
+              "category": "Business processes",
+              "keywords": [
+                "predeployment testing",
+                "validation",
+                "test evidence",
+                "security regression testing"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C06",
+              "name": "Backout plan",
+              "category": "Business processes",
+              "keywords": [
+                "rollback",
+                "recovery",
+                "reversal procedure",
+                "failed change"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C07",
+              "name": "Maintenance window",
+              "category": "Business processes",
+              "keywords": [
+                "scheduled downtime",
+                "change scheduling",
+                "business disruption"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C08",
+              "name": "Standard operating procedure",
+              "category": "Business processes",
+              "keywords": [
+                "SOP",
+                "repeatable process",
+                "documented steps",
+                "operational consistency"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C09",
+              "name": "Allow lists and deny lists",
+              "category": "Technical implications",
+              "keywords": [
+                "allowlist",
+                "denylist",
+                "access restrictions",
+                "permitted applications",
+                "blocked applications"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C10",
+              "name": "Restricted activities",
+              "category": "Technical implications",
+              "keywords": [
+                "change restrictions",
+                "prohibited operations",
+                "operational limitations"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C11",
+              "name": "Downtime",
+              "category": "Technical implications",
+              "keywords": [
+                "service outage",
+                "availability impact",
+                "business continuity"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C12",
+              "name": "Service restart",
+              "category": "Technical implications",
+              "keywords": [
+                "restart requirement",
+                "service interruption",
+                "configuration activation"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C13",
+              "name": "Application restart",
+              "category": "Technical implications",
+              "keywords": [
+                "application availability",
+                "restart requirement",
+                "user disruption"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C14",
+              "name": "Legacy applications",
+              "category": "Technical implications",
+              "keywords": [
+                "compatibility",
+                "unsupported software",
+                "legacy dependencies",
+                "technical debt"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C15",
+              "name": "Dependencies",
+              "category": "Technical implications",
+              "keywords": [
+                "upstream dependencies",
+                "downstream dependencies",
+                "interconnected systems",
+                "dependency mapping"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C16",
+              "name": "Updating diagrams",
+              "category": "Documentation",
+              "keywords": [
+                "network diagrams",
+                "architecture diagrams",
+                "topology changes",
+                "documentation accuracy"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C17",
+              "name": "Updating policies and procedures",
+              "category": "Documentation",
+              "keywords": [
+                "policy revision",
+                "procedure updates",
+                "operational documentation",
+                "change records"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.3-C18",
+              "name": "Version control",
+              "category": "Version control",
+              "keywords": [
+                "revision history",
+                "configuration versions",
+                "change tracking",
+                "rollback reference"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            }
+          ]
         },
         {
           "id": "1.4",
