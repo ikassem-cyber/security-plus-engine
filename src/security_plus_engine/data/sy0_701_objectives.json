@@ -216,7 +216,742 @@
         {
           "id": "1.2",
           "title": "Summarize fundamental security concepts",
-          "concepts": []
+          "concepts": [
+            {
+              "concept_id": "1.2-C01",
+              "name": "Confidentiality",
+              "category": "CIA triad",
+              "keywords": [
+                "unauthorized disclosure",
+                "data privacy",
+                "encryption",
+                "access control"
+              ],
+              "related_concepts": [
+                "Integrity",
+                "Availability",
+                "Authentication"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C02",
+              "name": "Integrity",
+              "category": "CIA triad",
+              "keywords": [
+                "unauthorized modification",
+                "data accuracy",
+                "hashing",
+                "digital signatures"
+              ],
+              "related_concepts": [
+                "Confidentiality",
+                "Availability",
+                "Non-repudiation"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C03",
+              "name": "Availability",
+              "category": "CIA triad",
+              "keywords": [
+                "uptime",
+                "redundancy",
+                "fault tolerance",
+                "disaster recovery"
+              ],
+              "related_concepts": [
+                "Confidentiality",
+                "Integrity",
+                "Business continuity"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C04",
+              "name": "Non-repudiation",
+              "category": "Fundamental security concepts",
+              "keywords": [
+                "proof of origin",
+                "proof of action",
+                "digital signatures",
+                "accountability",
+                "audit evidence"
+              ],
+              "related_concepts": [
+                "Integrity",
+                "Authentication",
+                "Accounting"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C05",
+              "name": "Authentication",
+              "category": "AAA",
+              "keywords": [
+                "identity verification",
+                "authenticating people",
+                "authenticating systems",
+                "credentials",
+                "multifactor authentication",
+                "machine identity"
+              ],
+              "related_concepts": [
+                "Authorization",
+                "Accounting",
+                "Non-repudiation"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C06",
+              "name": "Authorization",
+              "category": "AAA",
+              "keywords": [
+                "permissions",
+                "access rights",
+                "least privilege",
+                "access decisions"
+              ],
+              "related_concepts": [
+                "Authentication",
+                "Authorization models",
+                "Accounting"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C07",
+              "name": "Accounting",
+              "category": "AAA",
+              "keywords": [
+                "activity logging",
+                "audit trails",
+                "user actions",
+                "session records",
+                "accountability"
+              ],
+              "related_concepts": [
+                "Authentication",
+                "Authorization",
+                "Non-repudiation"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C08",
+              "name": "Authorization models",
+              "category": "AAA",
+              "keywords": [
+                "role-based access control",
+                "attribute-based access control",
+                "discretionary access control",
+                "mandatory access control",
+                "access control policies"
+              ],
+              "related_concepts": [
+                "Authorization",
+                "Least privilege"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C09",
+              "name": "Gap analysis",
+              "category": "Security assessment",
+              "keywords": [
+                "current state",
+                "desired state",
+                "security gaps",
+                "baseline",
+                "remediation priorities"
+              ],
+              "related_concepts": [
+                "Risk assessment",
+                "Security controls"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C10",
+              "name": "Zero Trust architecture",
+              "category": "Zero trust",
+              "keywords": [
+                "never trust always verify",
+                "continuous verification",
+                "least privilege",
+                "explicit verification",
+                "assume breach"
+              ],
+              "related_concepts": [
+                "Control plane",
+                "Data plane",
+                "Policy engine",
+                "Policy enforcement point"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C11",
+              "name": "Control plane",
+              "category": "Zero trust",
+              "keywords": [
+                "policy decisions",
+                "identity context",
+                "access policy",
+                "security orchestration"
+              ],
+              "related_concepts": [
+                "Data plane",
+                "Adaptive identity",
+                "Policy-driven access control"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C12",
+              "name": "Adaptive identity",
+              "category": "Zero trust control plane",
+              "keywords": [
+                "context-aware authentication",
+                "risk-based authentication",
+                "device posture",
+                "identity signals",
+                "continuous assessment"
+              ],
+              "related_concepts": [
+                "Authentication",
+                "Control plane"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C13",
+              "name": "Threat scope reduction",
+              "category": "Zero trust control plane",
+              "keywords": [
+                "limit blast radius",
+                "microsegmentation",
+                "lateral movement",
+                "attack surface reduction"
+              ],
+              "related_concepts": [
+                "Secured zones",
+                "Zero Trust architecture"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C14",
+              "name": "Policy-driven access control",
+              "category": "Zero trust control plane",
+              "keywords": [
+                "policy-based decisions",
+                "conditional access",
+                "identity context",
+                "device compliance"
+              ],
+              "related_concepts": [
+                "Authorization",
+                "Policy engine",
+                "Control plane"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C15",
+              "name": "Secured zones",
+              "category": "Zero trust control plane",
+              "keywords": [
+                "segmentation",
+                "isolation",
+                "trust boundaries",
+                "restricted resources"
+              ],
+              "related_concepts": [
+                "Threat scope reduction",
+                "Control plane"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C16",
+              "name": "Data plane",
+              "category": "Zero trust",
+              "keywords": [
+                "resource access",
+                "traffic forwarding",
+                "policy enforcement",
+                "communication paths"
+              ],
+              "related_concepts": [
+                "Control plane",
+                "Subject/system",
+                "Policy enforcement point"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C17",
+              "name": "Subject/system",
+              "category": "Zero trust data plane",
+              "keywords": [
+                "requesting entity",
+                "user",
+                "device",
+                "workload",
+                "protected resource"
+              ],
+              "related_concepts": [
+                "Data plane",
+                "Authentication",
+                "Policy enforcement point"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C18",
+              "name": "Policy engine",
+              "category": "Zero trust architecture components",
+              "keywords": [
+                "access decision",
+                "grant or deny",
+                "policy evaluation",
+                "risk signals"
+              ],
+              "related_concepts": [
+                "Policy administrator",
+                "Policy enforcement point",
+                "Policy-driven access control"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C19",
+              "name": "Policy administrator",
+              "category": "Zero trust architecture components",
+              "keywords": [
+                "establish session",
+                "terminate session",
+                "communicate decisions",
+                "configure enforcement"
+              ],
+              "related_concepts": [
+                "Policy engine",
+                "Policy enforcement point"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C20",
+              "name": "Policy enforcement point",
+              "category": "Zero trust architecture components",
+              "keywords": [
+                "enforce access decision",
+                "allow or block traffic",
+                "connection control",
+                "resource protection"
+              ],
+              "related_concepts": [
+                "Policy engine",
+                "Policy administrator",
+                "Data plane"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C21",
+              "name": "Bollards",
+              "category": "Physical security",
+              "keywords": [
+                "vehicle barriers",
+                "ramming prevention",
+                "perimeter protection"
+              ],
+              "related_concepts": [
+                "Fencing",
+                "Security guards"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C22",
+              "name": "Access control vestibule",
+              "category": "Physical security",
+              "keywords": [
+                "mantrap",
+                "tailgating prevention",
+                "controlled entry",
+                "interlocking doors"
+              ],
+              "related_concepts": [
+                "Access badges",
+                "Security guards"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C23",
+              "name": "Fencing",
+              "category": "Physical security",
+              "keywords": [
+                "perimeter barrier",
+                "deterrence",
+                "restricted access"
+              ],
+              "related_concepts": [
+                "Bollards",
+                "Video surveillance"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C24",
+              "name": "Video surveillance",
+              "category": "Physical security",
+              "keywords": [
+                "CCTV",
+                "monitoring",
+                "recording",
+                "incident evidence"
+              ],
+              "related_concepts": [
+                "Security guards",
+                "Lighting"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C25",
+              "name": "Security guards",
+              "category": "Physical security",
+              "keywords": [
+                "patrols",
+                "access verification",
+                "incident response"
+              ],
+              "related_concepts": [
+                "Video surveillance",
+                "Access badges"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C26",
+              "name": "Access badges",
+              "category": "Physical security",
+              "keywords": [
+                "physical access credentials",
+                "badge readers",
+                "entry authorization"
+              ],
+              "related_concepts": [
+                "Access control vestibule",
+                "Authentication"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C27",
+              "name": "Lighting",
+              "category": "Physical security",
+              "keywords": [
+                "visibility",
+                "deterrence",
+                "surveillance support"
+              ],
+              "related_concepts": [
+                "Video surveillance",
+                "Fencing"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C28",
+              "name": "Physical security sensors",
+              "category": "Physical security",
+              "keywords": [
+                "intrusion detection",
+                "motion detection",
+                "environment monitoring"
+              ],
+              "related_concepts": [
+                "Infrared sensors",
+                "Pressure sensors",
+                "Microwave sensors",
+                "Ultrasonic sensors"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C29",
+              "name": "Infrared sensors",
+              "category": "Physical security sensors",
+              "keywords": [
+                "infrared radiation",
+                "passive infrared",
+                "PIR",
+                "motion detection"
+              ],
+              "related_concepts": [
+                "Physical security sensors",
+                "Microwave sensors"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C30",
+              "name": "Pressure sensors",
+              "category": "Physical security sensors",
+              "keywords": [
+                "pressure mats",
+                "weight detection",
+                "contact detection"
+              ],
+              "related_concepts": [
+                "Physical security sensors",
+                "Infrared sensors"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C31",
+              "name": "Microwave sensors",
+              "category": "Physical security sensors",
+              "keywords": [
+                "microwave motion detection",
+                "Doppler effect",
+                "active sensing"
+              ],
+              "related_concepts": [
+                "Physical security sensors",
+                "Ultrasonic sensors"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C32",
+              "name": "Ultrasonic sensors",
+              "category": "Physical security sensors",
+              "keywords": [
+                "high-frequency sound",
+                "echo detection",
+                "active sensing"
+              ],
+              "related_concepts": [
+                "Physical security sensors",
+                "Microwave sensors"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C33",
+              "name": "Honeypot",
+              "category": "Deception and disruption",
+              "keywords": [
+                "decoy system",
+                "attacker attraction",
+                "threat intelligence"
+              ],
+              "related_concepts": [
+                "Honeynet",
+                "Honeytoken"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C34",
+              "name": "Honeynet",
+              "category": "Deception and disruption",
+              "keywords": [
+                "decoy network",
+                "multiple honeypots",
+                "attacker observation"
+              ],
+              "related_concepts": [
+                "Honeypot",
+                "Honeyfile"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C35",
+              "name": "Honeyfile",
+              "category": "Deception and disruption",
+              "keywords": [
+                "decoy document",
+                "unauthorized file access",
+                "alert trigger"
+              ],
+              "related_concepts": [
+                "Honeytoken",
+                "Honeypot"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.2-C36",
+              "name": "Honeytoken",
+              "category": "Deception and disruption",
+              "keywords": [
+                "decoy credential",
+                "planted identifier",
+                "canary token",
+                "misuse alert"
+              ],
+              "related_concepts": [
+                "Honeyfile",
+                "Honeypot"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            }
+          ]
         },
         {
           "id": "1.3",
