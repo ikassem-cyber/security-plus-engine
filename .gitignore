@@ -23,3 +23,8 @@ venv/
 # Operating system
 .DS_Store
 Thumbs.db
+
+
+# Private study data and imported materials
+data/user/
+data/imports/

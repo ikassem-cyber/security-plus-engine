@@ -1,0 +1,382 @@
+{
+  "exam": "CompTIA Security+",
+  "exam_code": "SY0-701",
+  "blueprint_source": "CompTIA official exam objectives",
+  "domains": [
+    {
+      "id": "1.0",
+      "name": "General Security Concepts",
+      "weight": 12,
+      "objectives": [
+        {
+          "id": "1.1",
+          "title": "Compare and contrast various types of security controls",
+          "concepts": [
+            {
+              "name": "Managerial controls",
+              "category": "Control category",
+              "keywords": [
+                "governance",
+                "policies",
+                "standards",
+                "risk management"
+              ],
+              "related_concepts": [
+                "operational controls",
+                "technical controls"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "short_answer"
+              ],
+              "concept_id": "1.1-C01"
+            },
+            {
+              "name": "Operational controls",
+              "category": "Control category",
+              "keywords": [
+                "procedures",
+                "personnel",
+                "security awareness",
+                "guard services"
+              ],
+              "related_concepts": [
+                "managerial controls",
+                "physical controls"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "short_answer"
+              ],
+              "concept_id": "1.1-C02"
+            },
+            {
+              "name": "Technical controls",
+              "category": "Control category",
+              "keywords": [
+                "logical controls",
+                "firewalls",
+                "encryption",
+                "access control"
+              ],
+              "related_concepts": [
+                "preventive controls",
+                "detective controls"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ],
+              "concept_id": "1.1-C03"
+            },
+            {
+              "name": "Physical controls",
+              "category": "Control category",
+              "keywords": [
+                "locks",
+                "fences",
+                "bollards",
+                "security guards",
+                "cameras"
+              ],
+              "related_concepts": [
+                "operational controls",
+                "deterrent controls"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ],
+              "concept_id": "1.1-C04"
+            },
+            {
+              "name": "Preventive controls",
+              "category": "Control function",
+              "keywords": [
+                "access restrictions",
+                "firewalls",
+                "encryption",
+                "MFA"
+              ],
+              "related_concepts": [
+                "detective controls",
+                "corrective controls"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ],
+              "concept_id": "1.1-C05"
+            },
+            {
+              "name": "Deterrent controls",
+              "category": "Control function",
+              "keywords": [
+                "warning signs",
+                "security guards",
+                "visible cameras"
+              ],
+              "related_concepts": [
+                "preventive controls",
+                "directive controls"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "short_answer"
+              ],
+              "concept_id": "1.1-C06"
+            },
+            {
+              "name": "Detective controls",
+              "category": "Control function",
+              "keywords": [
+                "IDS",
+                "CCTV monitoring",
+                "log monitoring",
+                "alerts"
+              ],
+              "related_concepts": [
+                "preventive controls",
+                "corrective controls"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ],
+              "concept_id": "1.1-C07"
+            },
+            {
+              "name": "Corrective controls",
+              "category": "Control function",
+              "keywords": [
+                "remediation",
+                "patching",
+                "restoration",
+                "incident recovery"
+              ],
+              "related_concepts": [
+                "detective controls",
+                "preventive controls"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ],
+              "concept_id": "1.1-C08"
+            },
+            {
+              "name": "Compensating controls",
+              "category": "Control function",
+              "keywords": [
+                "alternative controls",
+                "risk mitigation",
+                "legacy systems"
+              ],
+              "related_concepts": [
+                "preventive controls",
+                "risk management"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "short_answer"
+              ],
+              "concept_id": "1.1-C09"
+            },
+            {
+              "name": "Directive controls",
+              "category": "Control function",
+              "keywords": [
+                "policies",
+                "procedures",
+                "acceptable use policy",
+                "security instructions"
+              ],
+              "related_concepts": [
+                "managerial controls",
+                "operational controls"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "short_answer"
+              ],
+              "concept_id": "1.1-C10"
+            }
+          ]
+        },
+        {
+          "id": "1.2",
+          "title": "Summarize fundamental security concepts",
+          "concepts": []
+        },
+        {
+          "id": "1.3",
+          "title": "Explain the importance of change management processes and the impact to security",
+          "concepts": []
+        },
+        {
+          "id": "1.4",
+          "title": "Explain the importance of using appropriate cryptographic solutions",
+          "concepts": []
+        }
+      ]
+    },
+    {
+      "id": "2.0",
+      "name": "Threats, Vulnerabilities, and Mitigations",
+      "weight": 22,
+      "objectives": [
+        {
+          "id": "2.1",
+          "title": "Compare and contrast common threat actors and motivations",
+          "concepts": []
+        },
+        {
+          "id": "2.2",
+          "title": "Explain common threat vectors and attack surfaces",
+          "concepts": []
+        },
+        {
+          "id": "2.3",
+          "title": "Explain various types of vulnerabilities",
+          "concepts": []
+        },
+        {
+          "id": "2.4",
+          "title": "Given a scenario, analyze indicators of malicious activity",
+          "concepts": []
+        },
+        {
+          "id": "2.5",
+          "title": "Explain the purpose of mitigation techniques used to secure the enterprise",
+          "concepts": []
+        }
+      ]
+    },
+    {
+      "id": "3.0",
+      "name": "Security Architecture",
+      "weight": 18,
+      "objectives": [
+        {
+          "id": "3.1",
+          "title": "Compare and contrast security implications of different architecture models",
+          "concepts": []
+        },
+        {
+          "id": "3.2",
+          "title": "Given a scenario, apply security principles to secure enterprise infrastructure",
+          "concepts": []
+        },
+        {
+          "id": "3.3",
+          "title": "Compare and contrast concepts and strategies to protect data",
+          "concepts": []
+        },
+        {
+          "id": "3.4",
+          "title": "Explain the importance of resilience and recovery in security architecture",
+          "concepts": []
+        }
+      ]
+    },
+    {
+      "id": "4.0",
+      "name": "Security Operations",
+      "weight": 28,
+      "objectives": [
+        {
+          "id": "4.1",
+          "title": "Given a scenario, apply common security techniques to computing resources.",
+          "concepts": []
+        },
+        {
+          "id": "4.2",
+          "title": "Explain the security implications of proper hardware, software, and data asset management.",
+          "concepts": []
+        },
+        {
+          "id": "4.3",
+          "title": "Explain various activities associated with vulnerability management.",
+          "concepts": []
+        },
+        {
+          "id": "4.4",
+          "title": "Explain security alerting and monitoring concepts and tools.",
+          "concepts": []
+        },
+        {
+          "id": "4.5",
+          "title": "Given a scenario, modify enterprise capabilities to enhance security.",
+          "concepts": []
+        },
+        {
+          "id": "4.6",
+          "title": "Given a scenario, implement and maintain identity and access management.",
+          "concepts": []
+        },
+        {
+          "id": "4.7",
+          "title": "Explain the importance of automation and orchestration related to secure operations.",
+          "concepts": []
+        },
+        {
+          "id": "4.8",
+          "title": "Explain appropriate incident response activities.",
+          "concepts": []
+        },
+        {
+          "id": "4.9",
+          "title": "Given a scenario, use data sources to support an investigation.",
+          "concepts": []
+        }
+      ]
+    },
+    {
+      "id": "5.0",
+      "name": "Security Program Management and Oversight",
+      "weight": 20,
+      "objectives": [
+        {
+          "id": "5.1",
+          "title": "Summarize elements of effective security governance.",
+          "concepts": []
+        },
+        {
+          "id": "5.2",
+          "title": "Explain elements of the risk management process.",
+          "concepts": []
+        },
+        {
+          "id": "5.3",
+          "title": "Explain the processes associated with third-party risk assessment and management.",
+          "concepts": []
+        },
+        {
+          "id": "5.4",
+          "title": "Summarize elements of effective security compliance.",
+          "concepts": []
+        },
+        {
+          "id": "5.5",
+          "title": "Explain types and purposes of audits and assessments.",
+          "concepts": []
+        },
+        {
+          "id": "5.6",
+          "title": "Given a scenario, implement security awareness practices.",
+          "concepts": []
+        }
+      ]
+    }
+  ]
+}

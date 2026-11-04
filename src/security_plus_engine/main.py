@@ -3,12 +3,17 @@ from dataclasses import dataclass
 
 @dataclass
 class Question:
+    question_id: str
     domain: str
-    topic: str
+    objective_id: str
+    concept_id: str
+    difficulty: str
+    question_type: str
     prompt: str
     options: list[str]
     correct_answer: int
     explanation: str
+    source: str
 
 
 DOMAINS = {
@@ -37,16 +42,25 @@ DOMAINS = {
 
 QUESTIONS = [
     Question(
+        question_id="Q0001",
         domain="4.0",
-        topic="Network Security",
+        objective_id="4.1",
+        concept_id="4.1-C01",
+        difficulty="foundational",
+        question_type="MCQ",
         prompt="Which protocol is commonly used to securely browse websites?",
         options=["FTP", "HTTPS", "Telnet", "SNMP"],
         correct_answer=2,
         explanation="HTTPS uses TLS to protect communication between a browser and a web server.",
+        source="Original sample question",
     ),
     Question(
+        question_id="Q0002",
         domain="1.0",
-        topic="Authentication",
+        objective_id="1.2",
+        concept_id="1.2-C01",
+        difficulty="foundational",
+        question_type="MCQ",
         prompt="Which security principle requires users to receive only the permissions they need?",
         options=[
             "Separation of duties",
@@ -56,10 +70,15 @@ QUESTIONS = [
         ],
         correct_answer=2,
         explanation="Least privilege limits access rights to only what is necessary for a user's role.",
+        source="Original sample question",
     ),
     Question(
+        question_id="Q0003",
         domain="1.0",
-        topic="Cryptography",
+        objective_id="1.4",
+        concept_id="1.4-C01",
+        difficulty="foundational",
+        question_type="MCQ",
         prompt="Which cryptographic method uses the same secret key to encrypt and decrypt data?",
         options=[
             "Asymmetric encryption",
@@ -69,9 +88,9 @@ QUESTIONS = [
         ],
         correct_answer=3,
         explanation="Symmetric encryption uses the same secret key for encryption and decryption.",
+        source="Original sample question",
     ),
 ]
-
 
 def calculate_domain_performance(
     questions: list[Question],
