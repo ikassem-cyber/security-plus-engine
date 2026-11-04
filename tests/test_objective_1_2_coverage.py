@@ -93,5 +93,129 @@ class TestObjective12Coverage(unittest.TestCase):
                 )
 
 
+    def test_authorization_model_abbreviations(self):
+        concept = next(
+            concept
+            for concept in self.objective["concepts"]
+            if concept["concept_id"] == "1.2-C08"
+        )
+
+        required_keywords = {"RBAC", "ABAC", "DAC", "MAC"}
+
+        self.assertTrue(
+            required_keywords.issubset(set(concept["keywords"]))
+        )
+
+
+
+    def test_authentication_keywords(self):
+        concept = next(
+            concept
+            for concept in self.objective["concepts"]
+            if concept["concept_id"] == "1.2-C05"
+        )
+
+        required_keywords = {
+            "authenticating people",
+            "authenticating systems",
+            "multifactor authentication",
+            "passwords",
+            "passkeys",
+            "biometrics",
+            "FIDO2",
+            "machine certificates",
+            "mutual TLS (mTLS)",
+            "service accounts",
+            "workload identity",
+        }
+
+        self.assertTrue(
+            required_keywords.issubset(set(concept["keywords"]))
+        )
+
+
+
+    def test_zero_trust_required_keywords(self):
+        required = {
+            "1.2-C18": {
+                "PE",
+                "policy decision point",
+                "access authorization decision",
+            },
+            "1.2-C19": {
+                "PA",
+                "session establishment",
+                "session termination",
+            },
+            "1.2-C20": {
+                "PEP",
+                "access enforcement",
+                "monitor active connections",
+            },
+        }
+
+        concepts = {
+            concept["concept_id"]: concept
+            for concept in self.objective["concepts"]
+        }
+
+        for concept_id, keywords in required.items():
+            with self.subTest(concept_id=concept_id):
+                self.assertIn(concept_id, concepts)
+                self.assertTrue(
+                    keywords.issubset(
+                        set(concepts[concept_id]["keywords"])
+                    ),
+                    f"Missing required keywords for {concept_id}",
+                )
+
+
+
+    def test_physical_security_sensor_keywords(self):
+        required = {
+            "1.2-C28": {
+                "false positives",
+                "sensor placement",
+                "layered detection",
+            },
+            "1.2-C29": {
+                "PIR",
+                "thermal radiation changes",
+                "active infrared",
+                "infrared beam interruption",
+            },
+            "1.2-C30": {
+                "pressure mats",
+                "force detection",
+                "physical contact",
+            },
+            "1.2-C31": {
+                "Doppler effect",
+                "Doppler shift",
+                "reflected microwave signals",
+            },
+            "1.2-C32": {
+                "high-frequency sound",
+                "reflected sound waves",
+                "echo timing",
+            },
+        }
+
+        concepts = {
+            concept["concept_id"]: concept
+            for concept in self.objective["concepts"]
+        }
+
+        for concept_id, keywords in required.items():
+            with self.subTest(concept_id=concept_id):
+                self.assertIn(concept_id, concepts)
+                self.assertTrue(
+                    keywords.issubset(
+                        set(concepts[concept_id]["keywords"])
+                    ),
+                    f"Missing required sensor keywords for {concept_id}",
+                )
+
+
 if __name__ == "__main__":
     unittest.main()

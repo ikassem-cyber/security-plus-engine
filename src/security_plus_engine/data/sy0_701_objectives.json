@@ -225,7 +225,9 @@
                 "unauthorized disclosure",
                 "data privacy",
                 "encryption",
-                "access control"
+                "access control",
+                "data at rest",
+                "data in transit"
               ],
               "related_concepts": [
                 "Integrity",
@@ -246,7 +248,9 @@
                 "unauthorized modification",
                 "data accuracy",
                 "hashing",
-                "digital signatures"
+                "digital signatures",
+                "integrity verification",
+                "tamper detection"
               ],
               "related_concepts": [
                 "Confidentiality",
@@ -267,7 +271,9 @@
                 "uptime",
                 "redundancy",
                 "fault tolerance",
-                "disaster recovery"
+                "disaster recovery",
+                "high availability",
+                "failover"
               ],
               "related_concepts": [
                 "Confidentiality",
@@ -289,7 +295,10 @@
                 "proof of action",
                 "digital signatures",
                 "accountability",
-                "audit evidence"
+                "audit evidence",
+                "proof of receipt",
+                "signed transactions",
+                "evidence integrity"
               ],
               "related_concepts": [
                 "Integrity",
@@ -312,7 +321,15 @@
                 "authenticating systems",
                 "credentials",
                 "multifactor authentication",
-                "machine identity"
+                "machine identity",
+                "passwords",
+                "passkeys",
+                "biometrics",
+                "FIDO2",
+                "machine certificates",
+                "mutual TLS (mTLS)",
+                "service accounts",
+                "workload identity"
               ],
               "related_concepts": [
                 "Authorization",
@@ -377,7 +394,11 @@
                 "attribute-based access control",
                 "discretionary access control",
                 "mandatory access control",
-                "access control policies"
+                "access control policies",
+                "RBAC",
+                "ABAC",
+                "DAC",
+                "MAC"
               ],
               "related_concepts": [
                 "Authorization",
@@ -398,7 +419,9 @@
                 "desired state",
                 "security gaps",
                 "baseline",
-                "remediation priorities"
+                "remediation priorities",
+                "maturity assessment",
+                "target-state comparison"
               ],
               "related_concepts": [
                 "Risk assessment",
@@ -587,7 +610,10 @@
                 "access decision",
                 "grant or deny",
                 "policy evaluation",
-                "risk signals"
+                "risk signals",
+                "PE",
+                "policy decision point",
+                "access authorization decision"
               ],
               "related_concepts": [
                 "Policy administrator",
@@ -608,7 +634,10 @@
                 "establish session",
                 "terminate session",
                 "communicate decisions",
-                "configure enforcement"
+                "configure enforcement",
+                "PA",
+                "session establishment",
+                "session termination"
               ],
               "related_concepts": [
                 "Policy engine",
@@ -628,7 +657,10 @@
                 "enforce access decision",
                 "allow or block traffic",
                 "connection control",
-                "resource protection"
+                "resource protection",
+                "PEP",
+                "access enforcement",
+                "monitor active connections"
               ],
               "related_concepts": [
                 "Policy engine",
@@ -668,7 +700,9 @@
                 "mantrap",
                 "tailgating prevention",
                 "controlled entry",
-                "interlocking doors"
+                "interlocking doors",
+                "piggybacking",
+                "anti-tailgating"
               ],
               "related_concepts": [
                 "Access badges",
@@ -707,7 +741,8 @@
                 "CCTV",
                 "monitoring",
                 "recording",
-                "incident evidence"
+                "incident evidence",
+                "detective control"
               ],
               "related_concepts": [
                 "Security guards",
@@ -783,7 +818,10 @@
               "keywords": [
                 "intrusion detection",
                 "motion detection",
-                "environment monitoring"
+                "environment monitoring",
+                "false positives",
+                "sensor placement",
+                "layered detection"
               ],
               "related_concepts": [
                 "Infrared sensors",
@@ -805,7 +843,12 @@
                 "infrared radiation",
                 "passive infrared",
                 "PIR",
-                "motion detection"
+                "motion detection",
+                "body heat",
+                "thermal radiation changes",
+                "passive detection",
+                "active infrared",
+                "infrared beam interruption"
               ],
               "related_concepts": [
                 "Physical security sensors",
@@ -824,7 +867,10 @@
               "keywords": [
                 "pressure mats",
                 "weight detection",
-                "contact detection"
+                "contact detection",
+                "floor sensors",
+                "force detection",
+                "physical contact"
               ],
               "related_concepts": [
                 "Physical security sensors",
@@ -843,7 +889,10 @@
               "keywords": [
                 "microwave motion detection",
                 "Doppler effect",
-                "active sensing"
+                "active sensing",
+                "Doppler shift",
+                "reflected microwave signals",
+                "movement detection"
               ],
               "related_concepts": [
                 "Physical security sensors",
@@ -862,7 +911,10 @@
               "keywords": [
                 "high-frequency sound",
                 "echo detection",
-                "active sensing"
+                "active sensing",
+                "reflected sound waves",
+                "echo timing",
+                "ultrasonic motion detection"
               ],
               "related_concepts": [
                 "Physical security sensors",
@@ -881,7 +933,8 @@
               "keywords": [
                 "decoy system",
                 "attacker attraction",
-                "threat intelligence"
+                "threat intelligence",
+                "deception monitoring"
               ],
               "related_concepts": [
                 "Honeynet",
@@ -900,7 +953,8 @@
               "keywords": [
                 "decoy network",
                 "multiple honeypots",
-                "attacker observation"
+                "attacker observation",
+                "decoy network environment"
               ],
               "related_concepts": [
                 "Honeypot",
@@ -919,7 +973,8 @@
               "keywords": [
                 "decoy document",
                 "unauthorized file access",
-                "alert trigger"
+                "alert trigger",
+                "file access alert"
               ],
               "related_concepts": [
                 "Honeytoken",
@@ -939,7 +994,9 @@
                 "decoy credential",
                 "planted identifier",
                 "canary token",
-                "misuse alert"
+                "misuse alert",
+                "canary credentials",
+                "unauthorized-use alert"
               ],
               "related_concepts": [
                 "Honeyfile",
