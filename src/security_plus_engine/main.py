@@ -3,6 +3,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Question:
+    domain: str
     topic: str
     prompt: str
     options: list[str]
@@ -10,8 +11,33 @@ class Question:
     explanation: str
 
 
+DOMAINS = {
+    "1.0": {
+        "name": "General Security Concepts",
+        "weight": 12,
+    },
+    "2.0": {
+        "name": "Threats, Vulnerabilities, and Mitigations",
+        "weight": 22,
+    },
+    "3.0": {
+        "name": "Security Architecture",
+        "weight": 18,
+    },
+    "4.0": {
+        "name": "Security Operations",
+        "weight": 28,
+    },
+    "5.0": {
+        "name": "Security Program Management and Oversight",
+        "weight": 20,
+    },
+}
+
+
 QUESTIONS = [
     Question(
+        domain="4.0",
         topic="Network Security",
         prompt="Which protocol is commonly used to securely browse websites?",
         options=["FTP", "HTTPS", "Telnet", "SNMP"],
@@ -19,6 +45,7 @@ QUESTIONS = [
         explanation="HTTPS uses TLS to protect communication between a browser and a web server.",
     ),
     Question(
+        domain="1.0",
         topic="Authentication",
         prompt="Which security principle requires users to receive only the permissions they need?",
         options=[
@@ -31,6 +58,7 @@ QUESTIONS = [
         explanation="Least privilege limits access rights to only what is necessary for a user's role.",
     ),
     Question(
+        domain="1.0",
         topic="Cryptography",
         prompt="Which cryptographic method uses the same secret key to encrypt and decrypt data?",
         options=[
@@ -45,6 +73,36 @@ QUESTIONS = [
 ]
 
 
+def calculate_domain_performance(
+    questions: list[Question],
+    user_answers: list[int],
+) -> dict:
+    """Calculate quiz accuracy for each exam domain."""
+
+    performance = {
+        domain_id: {
+            "correct": 0,
+            "total": 0,
+            "accuracy": 0.0,
+        }
+        for domain_id in DOMAINS
+    }
+
+    for question, answer in zip(questions, user_answers):
+        performance[question.domain]["total"] += 1
+
+        if check_answer(question, answer):
+            performance[question.domain]["correct"] += 1
+
+    for domain_data in performance.values():
+        if domain_data["total"] > 0:
+            domain_data["accuracy"] = (
+                domain_data["correct"] / domain_data["total"]
+            ) * 100
+
+    return performance
+
+
 def check_answer(question: Question, answer: int) -> bool:
     """Return True only when the answer is valid and correct."""
     if not 1 <= answer <= len(question.options):
@@ -55,12 +113,15 @@ def check_answer(question: Question, answer: int) -> bool:
 
 def run_quiz() -> None:
     score = 0
-
-    print("\n=== Security+ Study Engine ===")
+    user_answers = []
+    print("\n=== Security+ SY0-701 Study Engine ===")
     print(f"You have {len(QUESTIONS)} questions.\n")
 
     for number, question in enumerate(QUESTIONS, start=1):
-        print(f"Question {number}: {question.topic}")
+        domain_name = DOMAINS[question.domain]["name"]
+
+        print(f"Question {number}: {domain_name}")
+        print(f"Topic: {question.topic}")
         print(question.prompt)
 
         for index, option in enumerate(question.options, start=1):
@@ -73,6 +134,8 @@ def run_quiz() -> None:
                 break
 
             print(f"Please enter a number from 1 to {len(question.options)}.")
+
+        user_answers.append(int(answer))
 
         if check_answer(question, int(answer)):
             print("Correct!")
@@ -90,7 +153,21 @@ def run_quiz() -> None:
     print(f"Percentage: {percentage:.1f}%")
 
 
+    print("\n=== Domain Performance ===")
+
+    domain_results = calculate_domain_performance(QUESTIONS, user_answers)
+
+    for domain_id, results in domain_results.items():
+        domain_name = DOMAINS[domain_id]["name"]
+
+        if results["total"] == 0:
+            print(f"{domain_name}: Not attempted")
+        else:
+            print(
+                f"{domain_name}: "
+                f"{results['correct']}/{results['total']} correct "
+                f"({results['accuracy']:.1f}%)"
+            )
+
 if __name__ == "__main__":
     run_quiz()
-
-
