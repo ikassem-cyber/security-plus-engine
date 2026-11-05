@@ -1322,7 +1322,728 @@
         {
           "id": "1.4",
           "title": "Explain the importance of using appropriate cryptographic solutions",
-          "concepts": []
+          "concepts": [
+            {
+              "concept_id": "1.4-C01",
+              "name": "Public key",
+              "category": "PKI",
+              "keywords": [
+                "asymmetric cryptography",
+                "public key distribution",
+                "encryption",
+                "signature verification"
+              ],
+              "related_concepts": [
+                "1.4-C02",
+                "1.4-C12",
+                "1.4-C25"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C02",
+              "name": "Private key",
+              "category": "PKI",
+              "keywords": [
+                "secret key",
+                "private key protection",
+                "decryption",
+                "digital signing"
+              ],
+              "related_concepts": [
+                "1.4-C01",
+                "1.4-C03",
+                "1.4-C25"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C03",
+              "name": "Key escrow",
+              "category": "PKI",
+              "keywords": [
+                "escrow agent",
+                "key recovery",
+                "third-party custody",
+                "recovery authorization"
+              ],
+              "related_concepts": [
+                "1.4-C02"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C04",
+              "name": "Full-disk encryption",
+              "category": "Encryption",
+              "keywords": [
+                "FDE",
+                "whole disk encryption",
+                "data at rest",
+                "BitLocker"
+              ],
+              "related_concepts": [
+                "1.4-C06",
+                "1.4-C16"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C05",
+              "name": "Partition encryption",
+              "category": "Encryption",
+              "keywords": [
+                "volume encryption",
+                "encrypted partition",
+                "storage segmentation"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C06",
+              "name": "File encryption",
+              "category": "Encryption",
+              "keywords": [
+                "file-level encryption",
+                "EFS",
+                "individual file protection"
+              ],
+              "related_concepts": [
+                "1.4-C04",
+                "1.4-C09"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C07",
+              "name": "Volume encryption",
+              "category": "Encryption",
+              "keywords": [
+                "logical volume",
+                "encrypted volume",
+                "storage protection"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C08",
+              "name": "Database encryption",
+              "category": "Encryption",
+              "keywords": [
+                "TDE",
+                "database-at-rest encryption",
+                "database encryption keys"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C09",
+              "name": "Record encryption",
+              "category": "Encryption",
+              "keywords": [
+                "record-level encryption",
+                "field-level encryption",
+                "granular data protection"
+              ],
+              "related_concepts": [
+                "1.4-C06"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C10",
+              "name": "Transport encryption",
+              "category": "Encryption",
+              "keywords": [
+                "TLS",
+                "data in transit",
+                "HTTPS",
+                "secure communication"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C11",
+              "name": "Symmetric encryption",
+              "category": "Encryption",
+              "keywords": [
+                "shared secret",
+                "AES",
+                "block cipher",
+                "stream cipher"
+              ],
+              "related_concepts": [
+                "1.4-C12",
+                "1.4-C13"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C12",
+              "name": "Asymmetric encryption",
+              "category": "Encryption",
+              "keywords": [
+                "public-private key pair",
+                "RSA",
+                "ECC",
+                "hybrid encryption"
+              ],
+              "related_concepts": [
+                "1.4-C11",
+                "1.4-C13",
+                "1.4-C01"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C13",
+              "name": "Key exchange",
+              "category": "Encryption",
+              "keywords": [
+                "Diffie-Hellman",
+                "ECDHE",
+                "shared secret establishment",
+                "forward secrecy"
+              ],
+              "related_concepts": [
+                "1.4-C11",
+                "1.4-C12"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C14",
+              "name": "Encryption algorithms",
+              "category": "Encryption",
+              "keywords": [
+                "AES",
+                "RSA",
+                "ECC",
+                "cryptographic algorithm selection"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C15",
+              "name": "Key length",
+              "category": "Encryption",
+              "keywords": [
+                "key size",
+                "brute-force resistance",
+                "security strength",
+                "performance tradeoff"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C16",
+              "name": "Trusted Platform Module",
+              "category": "Cryptographic tools",
+              "keywords": [
+                "TPM",
+                "hardware-backed keys",
+                "measured boot",
+                "disk encryption key protection"
+              ],
+              "related_concepts": [
+                "1.4-C17",
+                "1.4-C18",
+                "1.4-C04"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C17",
+              "name": "Hardware Security Module",
+              "category": "Cryptographic tools",
+              "keywords": [
+                "HSM",
+                "hardware key storage",
+                "cryptographic operations",
+                "tamper resistance"
+              ],
+              "related_concepts": [
+                "1.4-C16",
+                "1.4-C18"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C18",
+              "name": "Key management system",
+              "category": "Cryptographic tools",
+              "keywords": [
+                "KMS",
+                "key rotation",
+                "key lifecycle",
+                "key access control"
+              ],
+              "related_concepts": [
+                "1.4-C16",
+                "1.4-C17"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C19",
+              "name": "Secure enclave",
+              "category": "Cryptographic tools",
+              "keywords": [
+                "isolated execution",
+                "protected key storage",
+                "hardware security boundary"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C20",
+              "name": "Steganography",
+              "category": "Obfuscation",
+              "keywords": [
+                "hidden messages",
+                "image steganography",
+                "concealment",
+                "covert communication"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C21",
+              "name": "Tokenization",
+              "category": "Obfuscation",
+              "keywords": [
+                "token vault",
+                "surrogate value",
+                "payment data protection",
+                "data substitution"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C22",
+              "name": "Data masking",
+              "category": "Obfuscation",
+              "keywords": [
+                "redaction",
+                "dynamic masking",
+                "static masking",
+                "sensitive data concealment"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C23",
+              "name": "Hashing",
+              "category": "Hashing",
+              "keywords": [
+                "one-way function",
+                "SHA-256",
+                "integrity",
+                "digest",
+                "collision resistance"
+              ],
+              "related_concepts": [
+                "1.4-C24",
+                "1.4-C25"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C24",
+              "name": "Salting",
+              "category": "Hashing",
+              "keywords": [
+                "unique salt",
+                "password hashes",
+                "rainbow table resistance",
+                "salt storage"
+              ],
+              "related_concepts": [
+                "1.4-C23",
+                "1.4-C26"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C25",
+              "name": "Digital signatures",
+              "category": "Digital signatures",
+              "keywords": [
+                "signing",
+                "signature verification",
+                "authenticity",
+                "integrity",
+                "non-repudiation"
+              ],
+              "related_concepts": [
+                "1.4-C01",
+                "1.4-C02",
+                "1.4-C23"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C26",
+              "name": "Key stretching",
+              "category": "Key stretching",
+              "keywords": [
+                "PBKDF2",
+                "bcrypt",
+                "scrypt",
+                "Argon2",
+                "work factor"
+              ],
+              "related_concepts": [
+                "1.4-C24"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C27",
+              "name": "Blockchain",
+              "category": "Blockchain",
+              "keywords": [
+                "hash-linked blocks",
+                "distributed ledger",
+                "tamper evidence",
+                "consensus"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C28",
+              "name": "Open public ledger",
+              "category": "Blockchain",
+              "keywords": [
+                "public ledger",
+                "transparent transactions",
+                "distributed recordkeeping"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C29",
+              "name": "Certificate authorities",
+              "category": "Certificates",
+              "keywords": [
+                "CA",
+                "certificate issuance",
+                "certificate signing",
+                "trust hierarchy"
+              ],
+              "related_concepts": [
+                "1.4-C30",
+                "1.4-C31",
+                "1.4-C34",
+                "1.4-C37"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C30",
+              "name": "Certificate revocation lists",
+              "category": "Certificates",
+              "keywords": [
+                "CRL",
+                "revoked certificates",
+                "revocation checking"
+              ],
+              "related_concepts": [
+                "1.4-C31",
+                "1.4-C29"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C31",
+              "name": "Online Certificate Status Protocol",
+              "category": "Certificates",
+              "keywords": [
+                "OCSP",
+                "certificate status",
+                "revocation response"
+              ],
+              "related_concepts": [
+                "1.4-C30",
+                "1.4-C29"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C32",
+              "name": "Self-signed certificates",
+              "category": "Certificates",
+              "keywords": [
+                "self-signed",
+                "internal trust",
+                "certificate validation warning"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C33",
+              "name": "Third-party certificates",
+              "category": "Certificates",
+              "keywords": [
+                "publicly trusted CA",
+                "third-party validation",
+                "trusted certificates"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C34",
+              "name": "Root of trust",
+              "category": "Certificates",
+              "keywords": [
+                "trust anchor",
+                "root CA",
+                "certificate chain",
+                "chain validation"
+              ],
+              "related_concepts": [
+                "1.4-C29",
+                "1.4-C37"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C35",
+              "name": "Certificate signing request",
+              "category": "Certificates",
+              "keywords": [
+                "CSR",
+                "public key submission",
+                "subject information",
+                "certificate request"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C36",
+              "name": "Wildcard certificates",
+              "category": "Certificates",
+              "keywords": [
+                "wildcard",
+                "subdomain coverage",
+                "certificate scope"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C37",
+              "name": "Certificate chain",
+              "category": "Certificates",
+              "keywords": [
+                "intermediate CA",
+                "root CA",
+                "chain of trust",
+                "path validation"
+              ],
+              "related_concepts": [
+                "1.4-C34",
+                "1.4-C29"
+              ],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C38",
+              "name": "Certificate expiration and renewal",
+              "category": "Certificates",
+              "keywords": [
+                "validity period",
+                "renewal",
+                "expired certificate",
+                "certificate lifecycle"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "1.4-C39",
+              "name": "Certificate pinning",
+              "category": "Certificates",
+              "keywords": [
+                "pinned public key",
+                "certificate validation",
+                "trust restriction"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            }
+          ]
         }
       ]
     },

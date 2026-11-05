@@ -1,6 +1,7 @@
 from dataclasses import replace
 import unittest
 from io import StringIO
+from unittest import result
 from unittest.mock import patch
 import json
 from pathlib import Path
@@ -215,27 +216,33 @@ class TestInteractiveQuiz(unittest.TestCase):
 
     
     def test_adaptive_quiz_uses_validated_questions(self):
-        with patch("builtins.input", side_effect=["2"]):
+        with patch("builtins.input", side_effect=["2", "3"]):
             with patch("sys.stdout", new_callable=StringIO) as output:
                 run_quiz(adaptive=True)
 
         text = output.getvalue()
 
-        self.assertIn("You have 1 questions.", text)
-        self.assertIn("Score: 1/1", text)
+        self.assertIn("You have 2 questions.", text)
+        self.assertIn("Score: 2/2", text)
         self.assertIn("Percentage: 100.0%", text)
+
         self.assertIn("1.2-C06: 1/1 correct", text)
+        self.assertIn("1.4-C11: 1/1 correct", text)
 
         self.assertNotIn("Which protocol is commonly used", text)
-        self.assertNotIn("Which cryptographic method", text)
 
         self.mock_save_history.assert_called_once()
 
         saved_history = self.mock_save_history.call_args.args[0]
 
-        self.assertEqual(len(saved_history), 1)
-        self.assertEqual(saved_history[0]["question_id"], "Q0002")
-        self.assertTrue(saved_history[0]["correct"])
+        self.assertEqual(len(saved_history), 2)
+        self.assertEqual(
+            [attempt["question_id"] for attempt in saved_history],
+            ["Q0002", "Q0003"],
+        )
+        self.assertTrue(
+            all(attempt["correct"] for attempt in saved_history)
+        )
 
 
     
@@ -272,9 +279,8 @@ class TestInteractiveQuiz(unittest.TestCase):
 
         self.assertIn("=== Validated Concept Performance ===", result)
         self.assertIn("1.2-C06: 1/1 correct (100.0%)", result)
-
+        self.assertIn("1.4-C11: 1/1 correct (100.0%)", result)
         self.assertNotIn("4.1-C01:", result)
-        self.assertNotIn("1.4-C01:", result)
 
     
     def test_unmapped_concepts_are_excluded_from_report(self):
@@ -293,8 +299,8 @@ class TestInteractiveQuiz(unittest.TestCase):
         )[1]
 
         self.assertIn("1.2-C06:", concept_report)
+        self.assertIn("1.4-C11:", concept_report)
         self.assertNotIn("4.1-C01:", concept_report)
-        self.assertNotIn("1.4-C01:", concept_report)
 
         
     def test_quiz_saves_all_attempts(self):
@@ -422,13 +428,13 @@ class TestConceptValidation(unittest.TestCase):
     def test_unmapped_concepts_are_not_recognized(self):
         valid_concepts = load_valid_concept_ids()
 
-        self.assertNotIn("1.4-C01", valid_concepts)
+        self.assertNotIn("1.4-C40", valid_concepts)
         self.assertNotIn("4.1-C01", valid_concepts)
 
     def test_all_mapped_concepts_are_loaded(self):
         valid_concepts = load_valid_concept_ids()
 
-        self.assertEqual(len(valid_concepts), 64)
+        self.assertEqual(len(valid_concepts), 103)
 
 
 class TestAdaptiveQuestionSelection(unittest.TestCase):
@@ -463,7 +469,7 @@ class TestAdaptiveQuestionSelection(unittest.TestCase):
                 "total": 4,
                 "accuracy": 100.0,
             },
-            "1.4-C01": {
+            "1.4-C11": {
                 "correct": 2,
                 "total": 4,
                 "accuracy": 50.0,
@@ -548,7 +554,7 @@ class TestHistoricalAdaptiveOrdering(unittest.TestCase):
 
         self.assertEqual(
             [question.question_id for question in selected],
-            ["Q0002"],
+            ["Q0002", "Q0003"],
         )
 
 
