@@ -1,6 +1,11 @@
 import json
 from pathlib import Path
 
+from security_plus_engine.question_validation import (
+    load_objective_mappings,
+    validate_question_mapping,
+)
+
 
 QUESTION_FIELDS = {
     "question_id",
@@ -27,7 +32,10 @@ VALID_DIFFICULTIES = {
 def load_question_bank(
     directory: Path,
     question_class,
+    objectives_path: Path | None = None,
 ) -> list:
+
+    
     """Load and validate questions from domain JSON files."""
 
     if not directory.is_dir():
@@ -37,6 +45,12 @@ def load_question_bank(
 
     questions = []
     seen_ids = set()
+
+    mappings = (
+        load_objective_mappings(objectives_path)
+        if objectives_path is not None
+        else None
+    )
 
     for path in sorted(directory.glob("domain_*.json")):
         with path.open(encoding="utf-8") as file:
@@ -100,14 +114,26 @@ def load_question_bank(
                     f"Invalid correct answer for {question_id}"
                 )
 
-            questions.append(
-                question_class(
-                    **{
-                        field: record[field]
-                        for field in QUESTION_FIELDS
-                    }
-                )
+            question = question_class(
+                **{
+                    field: record[field]
+                    for field in QUESTION_FIELDS
+                }
             )
+
+            if mappings is not None:
+                errors = validate_question_mapping(
+                    question,
+                    mappings,
+                )
+
+                if errors:
+                    raise ValueError(
+                        "Invalid question mapping:\n"
+                        + "\n".join(errors)
+                    )
+
+            questions.append(question)
 
     questions.sort(key=lambda question: question.question_id)
     
