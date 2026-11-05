@@ -2055,7 +2055,318 @@
         {
           "id": "2.1",
           "title": "Compare and contrast common threat actors and motivations",
-          "concepts": []
+          "concepts": [
+            {
+              "concept_id": "2.1-C01",
+              "name": "Nation-state",
+              "category": "Threat actors",
+              "keywords": [
+                "state-sponsored",
+                "APT",
+                "espionage",
+                "geopolitical"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C02",
+              "name": "Unskilled attacker",
+              "category": "Threat actors",
+              "keywords": [
+                "script kiddie",
+                "commodity tools",
+                "low sophistication"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C03",
+              "name": "Hacktivist",
+              "category": "Threat actors",
+              "keywords": [
+                "activism",
+                "ideology",
+                "political cause",
+                "defacement"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C04",
+              "name": "Insider threat",
+              "category": "Threat actors",
+              "keywords": [
+                "authorized access",
+                "malicious insider",
+                "negligent insider"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C05",
+              "name": "Organized crime",
+              "category": "Threat actors",
+              "keywords": [
+                "criminal enterprise",
+                "ransomware",
+                "financial gain"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C06",
+              "name": "Shadow IT",
+              "category": "Threat actors",
+              "keywords": [
+                "unsanctioned technology",
+                "unapproved applications",
+                "IT visibility"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C07",
+              "name": "Internal/external",
+              "category": "Attributes of actors",
+              "keywords": [
+                "insider",
+                "outsider",
+                "authorized access",
+                "threat origin"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C08",
+              "name": "Resources/funding",
+              "category": "Attributes of actors",
+              "keywords": [
+                "financial backing",
+                "infrastructure",
+                "personnel",
+                "budget"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C09",
+              "name": "Level of sophistication/capability",
+              "category": "Attributes of actors",
+              "keywords": [
+                "technical skill",
+                "custom tools",
+                "commodity exploits",
+                "advanced capability"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C10",
+              "name": "Data exfiltration",
+              "category": "Motivations",
+              "keywords": [
+                "data theft",
+                "unauthorized transfer",
+                "sensitive information"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C11",
+              "name": "Espionage",
+              "category": "Motivations",
+              "keywords": [
+                "intelligence gathering",
+                "trade secrets",
+                "state secrets"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C12",
+              "name": "Service disruption",
+              "category": "Motivations",
+              "keywords": [
+                "availability",
+                "outage",
+                "denial of service"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C13",
+              "name": "Blackmail",
+              "category": "Motivations",
+              "keywords": [
+                "extortion",
+                "coercion",
+                "threatened disclosure"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C14",
+              "name": "Financial gain",
+              "category": "Motivations",
+              "keywords": [
+                "profit",
+                "fraud",
+                "ransom",
+                "monetization"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C15",
+              "name": "Philosophical/political beliefs",
+              "category": "Motivations",
+              "keywords": [
+                "ideology",
+                "political agenda",
+                "activism"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C16",
+              "name": "Ethical",
+              "category": "Motivations",
+              "keywords": [
+                "authorized testing",
+                "responsible disclosure",
+                "security research"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C17",
+              "name": "Revenge",
+              "category": "Motivations",
+              "keywords": [
+                "retaliation",
+                "grievance",
+                "disgruntled employee"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C18",
+              "name": "Disruption/chaos",
+              "category": "Motivations",
+              "keywords": [
+                "destruction",
+                "instability",
+                "sabotage"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            },
+            {
+              "concept_id": "2.1-C19",
+              "name": "War",
+              "category": "Motivations",
+              "keywords": [
+                "cyberwarfare",
+                "military objectives",
+                "strategic conflict"
+              ],
+              "related_concepts": [],
+              "question_types": [
+                "MCQ",
+                "scenario",
+                "PBQ"
+              ]
+            }
+          ]
         },
         {
           "id": "2.2",
