@@ -21,31 +21,37 @@ from security_plus_engine.main import (
     select_adaptive_questions,
     check_answer,
     get_adaptive_question_order,
-    run_quiz,   
+    run_quiz,
 )
 
 
+# Stable legacy sample questions used by unit tests.
+# Production QUESTIONS may grow without changing these fixtures.
+SAMPLE_QUESTIONS = [
+    next(q for q in QUESTIONS if q.question_id == question_id)
+    for question_id in ("Q0001", "Q0002", "Q0003")
+]
 
 class TestQuizAnswers(unittest.TestCase):
 
     def test_correct_answer(self):
-        question = QUESTIONS[0]
+        question = SAMPLE_QUESTIONS[0]
         self.assertTrue(check_answer(question, 2))
 
     def test_incorrect_answer(self):
-        question = QUESTIONS[0]
+        question = SAMPLE_QUESTIONS[0]
         self.assertFalse(check_answer(question, 1))
 
     def test_another_correct_answer(self):
-        question = QUESTIONS[1]
+        question = SAMPLE_QUESTIONS[1]
         self.assertTrue(check_answer(question, 2))
 
     def test_answer_below_valid_range(self):
-        question = QUESTIONS[0]
+        question = SAMPLE_QUESTIONS[0]
         self.assertFalse(check_answer(question, 0))
 
     def test_answer_above_valid_range(self):
-        question = QUESTIONS[0]
+        question = SAMPLE_QUESTIONS[0]
         self.assertFalse(check_answer(question, 5))
 
 
@@ -70,7 +76,7 @@ class TestDomainPerformance(unittest.TestCase):
     def test_domain_accuracy(self):
         answers = [2, 2, 3]
 
-        results = calculate_domain_performance(QUESTIONS, answers)
+        results = calculate_domain_performance(SAMPLE_QUESTIONS, answers)
 
         self.assertEqual(results["1.0"]["correct"], 2)
         self.assertEqual(results["1.0"]["total"], 2)
@@ -81,7 +87,7 @@ class TestDomainPerformance(unittest.TestCase):
         self.assertEqual(results["4.0"]["accuracy"], 100.0)
 
     def test_unattempted_domains_have_zero_accuracy(self):
-        results = calculate_domain_performance(QUESTIONS, [2, 2, 3])
+        results = calculate_domain_performance(SAMPLE_QUESTIONS, [2, 2, 3])
 
         self.assertEqual(results["2.0"]["total"], 0)
         self.assertEqual(results["2.0"]["accuracy"], 0.0)
@@ -104,9 +110,9 @@ class TestQuestionMetadata(unittest.TestCase):
     def test_question_difficulties_are_valid(self):
         valid_difficulties = {
             "foundational",
-            "applied",
-            "advanced",
-            "expert",
+            "easy",
+            "medium",
+            "hard",
         }
 
         for question in QUESTIONS:
@@ -133,16 +139,16 @@ class TestQuestionMetadata(unittest.TestCase):
 
 class TestInteractiveQuiz(unittest.TestCase):
 
-    
+
     def test_adaptive_quiz_prioritizes_weaker_concepts(self):
         authentication_question = replace(
-            QUESTIONS[1],
+            SAMPLE_QUESTIONS[1],
             question_id="TEST_AUTH",
             concept_id="1.2-C05",
             prompt="Authentication test question",
         )
 
-        authorization_question = QUESTIONS[1]
+        authorization_question = SAMPLE_QUESTIONS[1]
 
         historical_attempts = [
             {"concept_id": "1.2-C05", "correct": False},
@@ -193,7 +199,7 @@ class TestInteractiveQuiz(unittest.TestCase):
         )
 
 
-    
+
     def test_adaptive_quiz_handles_empty_question_bank(self):
         with patch(
             "security_plus_engine.main.get_adaptive_question_order",
@@ -214,7 +220,7 @@ class TestInteractiveQuiz(unittest.TestCase):
         self.mock_save_history.assert_not_called()
 
 
-    
+
     def test_adaptive_quiz_uses_validated_questions(self):
         with patch("builtins.input", side_effect=["2", "3"]):
             with patch("sys.stdout", new_callable=StringIO) as output:
@@ -245,8 +251,16 @@ class TestInteractiveQuiz(unittest.TestCase):
         )
 
 
-    
+
     def setUp(self):
+
+        self.questions_patcher = patch(
+            "security_plus_engine.main.QUESTIONS",
+            SAMPLE_QUESTIONS,
+        )
+        self.questions_patcher.start()
+        self.addCleanup(self.questions_patcher.stop)
+
         self.history_patcher = patch(
             "security_plus_engine.main.load_history",
             return_value=[],
@@ -282,7 +296,7 @@ class TestInteractiveQuiz(unittest.TestCase):
         self.assertIn("1.4-C11: 1/1 correct (100.0%)", result)
         self.assertNotIn("4.1-C01:", result)
 
-    
+
     def test_unmapped_concepts_are_excluded_from_report(self):
         from security_plus_engine.main import run_quiz
 
@@ -302,7 +316,7 @@ class TestInteractiveQuiz(unittest.TestCase):
         self.assertIn("1.4-C11:", concept_report)
         self.assertNotIn("4.1-C01:", concept_report)
 
-        
+
     def test_quiz_saves_all_attempts(self):
         from security_plus_engine.main import run_quiz
 
@@ -371,7 +385,7 @@ class TestConceptPerformance(unittest.TestCase):
 
     def test_all_correct_answers(self):
         results = calculate_concept_performance(
-            QUESTIONS, [2, 2, 3]
+            SAMPLE_QUESTIONS, [2, 2, 3]
         )
 
         self.assertEqual(results["1.2-C06"]["correct"], 1)
@@ -380,7 +394,7 @@ class TestConceptPerformance(unittest.TestCase):
 
     def test_incorrect_answer(self):
         results = calculate_concept_performance(
-            QUESTIONS, [2, 1, 3]
+            SAMPLE_QUESTIONS, [2, 1, 3]
         )
 
         self.assertEqual(results["1.2-C06"]["correct"], 0)
@@ -389,9 +403,9 @@ class TestConceptPerformance(unittest.TestCase):
 
     def test_repeated_concept(self):
         repeated_questions = [
-            QUESTIONS[1],
-            QUESTIONS[1],
-            QUESTIONS[1],
+            SAMPLE_QUESTIONS[1],
+            SAMPLE_QUESTIONS[1],
+            SAMPLE_QUESTIONS[1],
         ]
 
         results = calculate_concept_performance(
@@ -407,7 +421,7 @@ class TestConceptPerformance(unittest.TestCase):
     def test_mismatched_answer_count(self):
         with self.assertRaises(ValueError):
             calculate_concept_performance(
-                QUESTIONS, [2, 2]
+                SAMPLE_QUESTIONS, [2, 2]
             )
 
     def test_empty_quiz(self):
@@ -449,7 +463,7 @@ class TestAdaptiveQuestionSelection(unittest.TestCase):
         }
 
         selected = select_adaptive_questions(
-            QUESTIONS, performance
+            SAMPLE_QUESTIONS, performance
         )
 
         self.assertEqual(
@@ -477,7 +491,7 @@ class TestAdaptiveQuestionSelection(unittest.TestCase):
         }
 
         selected = select_adaptive_questions(
-            QUESTIONS, performance
+            SAMPLE_QUESTIONS, performance
         )
 
         self.assertEqual(
@@ -486,12 +500,12 @@ class TestAdaptiveQuestionSelection(unittest.TestCase):
         )
 
     def test_original_question_order_is_unchanged(self):
-        original_ids = [q.question_id for q in QUESTIONS]
+        original_ids = [q.question_id for q in SAMPLE_QUESTIONS]
 
-        select_adaptive_questions(QUESTIONS, {})
+        select_adaptive_questions(SAMPLE_QUESTIONS, {})
 
         self.assertEqual(
-            [q.question_id for q in QUESTIONS],
+            [q.question_id for q in SAMPLE_QUESTIONS],
             original_ids,
         )
 
@@ -548,7 +562,7 @@ class TestHistoricalAdaptiveOrdering(unittest.TestCase):
 
     def test_unmapped_questions_are_excluded(self):
         selected = get_adaptive_question_order(
-            QUESTIONS,
+            SAMPLE_QUESTIONS,
             [],
         )
 

@@ -1,0 +1,542 @@
+[
+  {
+    "question_id": "Q0004",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C01",
+    "difficulty": "easy",
+    "question_type": "MCQ",
+    "prompt": "A security team identifies a highly funded attacker conducting a long-term campaign to obtain another country's classified defense information. Which threat actor is MOST likely responsible?",
+    "options": [
+      "Unskilled attacker",
+      "Nation-state",
+      "Hacktivist",
+      "Shadow IT"
+    ],
+    "correct_answer": 2,
+    "explanation": "A nation-state actor may have substantial resources and conduct prolonged espionage campaigns in support of national interests. Funding and sophistication alone do not prove attribution, but the geopolitical intelligence objective makes a nation-state the best answer.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0005",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C02",
+    "difficulty": "easy",
+    "question_type": "MCQ",
+    "prompt": "An attacker downloads a publicly available exploit tool and launches it without understanding the underlying vulnerability. Which description BEST fits this attacker?",
+    "options": [
+      "Nation-state operator",
+      "Insider threat",
+      "Unskilled attacker",
+      "Security architect"
+    ],
+    "correct_answer": 3,
+    "explanation": "An unskilled attacker often relies on existing tools and instructions rather than independently developing exploits or understanding their technical mechanisms.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0006",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C03",
+    "difficulty": "easy",
+    "question_type": "MCQ",
+    "prompt": "A group defaces a corporation's website to protest the company's environmental policies. Which threat actor category BEST describes the group?",
+    "options": [
+      "Organized crime",
+      "Hacktivist",
+      "Unskilled attacker",
+      "Insider threat"
+    ],
+    "correct_answer": 2,
+    "explanation": "Hacktivists conduct cyber activities to advance political, social, or ideological causes. Website defacement used as a protest is a common example.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0007",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C04",
+    "difficulty": "easy",
+    "question_type": "MCQ",
+    "prompt": "An employee intentionally copies confidential customer records to a personal drive before resigning. Which threat category BEST applies?",
+    "options": [
+      "External attacker",
+      "Insider threat",
+      "Nation-state",
+      "Unskilled attacker"
+    ],
+    "correct_answer": 2,
+    "explanation": "An insider threat involves a person with legitimate organizational access who misuses that access or creates security risk. An employee stealing records is a malicious insider threat.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0008",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C05",
+    "difficulty": "easy",
+    "question_type": "MCQ",
+    "prompt": "A coordinated criminal group deploys ransomware against several businesses and demands payment for decryption keys. Which threat actor is MOST likely?",
+    "options": [
+      "Organized crime",
+      "Hacktivist",
+      "Authorized penetration tester",
+      "Unintentional insider"
+    ],
+    "correct_answer": 1,
+    "explanation": "Organized cybercrime groups commonly coordinate financially motivated attacks, including ransomware campaigns and extortion.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0009",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C06",
+    "difficulty": "easy",
+    "question_type": "MCQ",
+    "prompt": "A department begins using an unapproved cloud file-sharing service without notifying the IT or security team. What is this an example of?",
+    "options": [
+      "Zero trust",
+      "Shadow IT",
+      "Data classification",
+      "Federated identity"
+    ],
+    "correct_answer": 2,
+    "explanation": "Shadow IT refers to technology systems, applications, or services used without appropriate organizational IT approval or oversight. Such usage can create unmanaged security risks.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0010",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C10",
+    "difficulty": "easy",
+    "question_type": "MCQ",
+    "prompt": "An attacker transfers confidential research documents from a compromised server to an external system under their control. What activity does this BEST describe?",
+    "options": [
+      "Data exfiltration",
+      "Data sanitization",
+      "Data deduplication",
+      "Data retention"
+    ],
+    "correct_answer": 1,
+    "explanation": "Data exfiltration is the unauthorized transfer of data from an organization's environment to an external destination.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0011",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C11",
+    "difficulty": "easy",
+    "question_type": "MCQ",
+    "prompt": "An attacker secretly gathers proprietary aerospace designs to provide a competitive or strategic intelligence advantage to another organization. Which motivation BEST applies?",
+    "options": [
+      "Revenge",
+      "Espionage",
+      "Service disruption",
+      "Disruption for chaos"
+    ],
+    "correct_answer": 2,
+    "explanation": "Espionage involves covertly obtaining confidential or sensitive information for intelligence, strategic, or competitive advantage.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0012",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C13",
+    "difficulty": "easy",
+    "question_type": "MCQ",
+    "prompt": "An attacker threatens to publish a company's stolen private documents unless the company pays. Which motivation is MOST directly demonstrated by the threat?",
+    "options": [
+      "Ethical research",
+      "War",
+      "Blackmail",
+      "Service availability"
+    ],
+    "correct_answer": 3,
+    "explanation": "Blackmail involves using threats to reveal damaging or sensitive information to coerce a victim. The attacker may also seek financial gain, but the specific coercive method described is blackmail.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0013",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C17",
+    "difficulty": "easy",
+    "question_type": "MCQ",
+    "prompt": "A former employee attacks a company's systems because they believe they were treated unfairly when dismissed. Which motivation BEST fits the scenario?",
+    "options": [
+      "Espionage",
+      "Financial gain",
+      "Ethical research",
+      "Revenge"
+    ],
+    "correct_answer": 4,
+    "explanation": "Revenge is a motivation involving retaliation for a perceived wrong. The employee's stated grievance is the key indicator.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0014",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C07",
+    "difficulty": "medium",
+    "question_type": "scenario",
+    "prompt": "An organization's monitoring system detects unauthorized database queries originating from a valid employee account. Investigation reveals the account was compromised by someone outside the organization. How should the threat actor be classified?",
+    "options": [
+      "Internal actor because the account belongs to an employee",
+      "External actor because the attacker operates outside the organization",
+      "Insider threat because the queries used authorized credentials",
+      "Shadow IT because an employee account was involved"
+    ],
+    "correct_answer": 2,
+    "explanation": "Threat actor classification depends on the actor's relationship to the organization, not merely the credentials used. An external attacker using stolen employee credentials remains an external actor.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0015",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C08",
+    "difficulty": "medium",
+    "question_type": "scenario",
+    "prompt": "A security analyst compares two attacker groups. Group A relies on free public tools and rented infrastructure. Group B maintains dedicated infrastructure, purchases zero-day exploits, and operates continuously. Which attribute MOST clearly distinguishes Group B?",
+    "options": [
+      "Greater resources and funding",
+      "An exclusively internal origin",
+      "A guaranteed nation-state affiliation",
+      "An ethical motivation"
+    ],
+    "correct_answer": 1,
+    "explanation": "Dedicated infrastructure, purchased exploits, and sustained operations indicate substantial resources and funding. These characteristics do not independently establish the group's identity or motivation.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0016",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C09",
+    "difficulty": "medium",
+    "question_type": "scenario",
+    "prompt": "An attacker develops a custom exploit chain, bypasses multiple defensive controls, and modifies techniques after each detection attempt. Which threat actor attribute is MOST strongly demonstrated?",
+    "options": [
+      "Internal access",
+      "Financial motivation",
+      "High sophistication and capability",
+      "Political ideology"
+    ],
+    "correct_answer": 3,
+    "explanation": "Custom exploit development, defensive evasion, and tactical adaptation demonstrate technical sophistication and operational capability. They do not prove a particular motivation or affiliation.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0017",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C12",
+    "difficulty": "medium",
+    "question_type": "scenario",
+    "prompt": "An attacker overwhelms a hospital's public appointment portal with traffic. No records are stolen, but patients cannot access the service. Which attacker objective is MOST directly demonstrated?",
+    "options": [
+      "Espionage",
+      "Data exfiltration",
+      "Credential harvesting",
+      "Service disruption"
+    ],
+    "correct_answer": 4,
+    "explanation": "The attack primarily targets availability by preventing legitimate users from accessing a service. This is service disruption, regardless of whether data theft also occurs.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0018",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C14",
+    "difficulty": "medium",
+    "question_type": "scenario",
+    "prompt": "A criminal group compromises online shopping accounts and sells the stolen account access to other criminals. Which motivation BEST explains the operation?",
+    "options": [
+      "Revenge",
+      "Financial gain",
+      "Political beliefs",
+      "War"
+    ],
+    "correct_answer": 2,
+    "explanation": "Selling stolen account access generates revenue, making financial gain the primary motivation. The specific attack technique does not change that underlying objective.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0019",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C15",
+    "difficulty": "medium",
+    "question_type": "scenario",
+    "prompt": "A group repeatedly targets organizations associated with a controversial public policy. Its public statements emphasize ideological opposition, and the attacks generate no apparent revenue. Which motivation is MOST likely?",
+    "options": [
+      "Financial gain",
+      "Corporate espionage",
+      "Philosophical or political beliefs",
+      "Personal revenge"
+    ],
+    "correct_answer": 3,
+    "explanation": "Ideologically targeted attacks accompanied by political statements indicate philosophical or political motivation. The absence of financial demands further supports this assessment.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0020",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C16",
+    "difficulty": "medium",
+    "question_type": "scenario",
+    "prompt": "A researcher receives written permission to assess a company's application within a defined scope. The researcher reports discovered vulnerabilities privately. Which motivation BEST describes this activity?",
+    "options": [
+      "Ethical",
+      "Blackmail",
+      "Espionage",
+      "Revenge"
+    ],
+    "correct_answer": 1,
+    "explanation": "Authorized security research performed within agreed boundaries and responsibly reported is consistent with ethical security activity. Permission and scope are important distinguishing factors.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0021",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C18",
+    "difficulty": "medium",
+    "question_type": "scenario",
+    "prompt": "An attacker compromises multiple unrelated websites and deletes their content. Investigators find no financial demands, intelligence collection, or ideological statements. The attacker publicly celebrates causing confusion and damage. Which motivation BEST fits?",
+    "options": [
+      "Espionage",
+      "Financial gain",
+      "Ethical research",
+      "Disruption or chaos"
+    ],
+    "correct_answer": 4,
+    "explanation": "When the attacker primarily seeks widespread confusion, destruction, or disorder without another identifiable objective, disruption or chaos is the best-supported motivation.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0022",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C19",
+    "difficulty": "medium",
+    "question_type": "scenario",
+    "prompt": "During an armed conflict, a military cyber unit attacks the opposing country's communications infrastructure to impair battlefield coordination. Which motivation BEST describes the operation?",
+    "options": [
+      "Personal revenge",
+      "Financial gain",
+      "War",
+      "Ethical disclosure"
+    ],
+    "correct_answer": 3,
+    "explanation": "Cyber operations conducted to support military objectives during an armed conflict are motivated by war. The immediate technical effect may be service disruption, but the broader purpose is military.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0023",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "concept_id": "2.1-C06",
+    "difficulty": "medium",
+    "question_type": "scenario",
+    "prompt": "A marketing team purchases a SaaS platform without security review. The platform automatically synchronizes customer information to an external provider. Which issue should the security team identify FIRST?",
+    "options": [
+      "The provider must be a nation-state threat actor",
+      "The team has introduced shadow IT and unmanaged data exposure risk",
+      "The synchronization proves a malicious insider is stealing data",
+      "The organization has eliminated third-party security risk"
+    ],
+    "correct_answer": 2,
+    "explanation": "Unapproved SaaS adoption is shadow IT. Automatic customer-data synchronization can create additional third-party and data-governance risks, but it does not by itself prove malicious intent.",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0024",
+    "concept_id": "2.1-C01",
+    "prompt": "A defense contractor discovers months of stealthy access to classified prototype designs. The intruder used custom implants, compromised suppliers, and infrastructure previously associated with a foreign intelligence service. No ransom demand or public statement exists. Which assessment is MOST defensible?",
+    "options": [
+      "The campaign is conclusively attributable to that foreign government",
+      "A nation-state actor is a leading hypothesis, but attribution requires corroborating evidence",
+      "The absence of ransom proves the attacker is an ethical researcher",
+      "Supplier compromise establishes that the attacker is an insider"
+    ],
+    "correct_answer": 2,
+    "explanation": "Strategic intelligence targeting, sustained access, and specialized tooling support a nation-state hypothesis, but infrastructure overlaps can be misleading or deliberately planted. Attribution is not conclusive.",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "difficulty": "hard",
+    "question_type": "scenario",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0025",
+    "concept_id": "2.1-C04",
+    "prompt": "A payroll administrator with authorized access exports employee records after receiving a forged urgent request from an attacker. Logs show the administrator followed the request without realizing it was fraudulent. Which classification BEST captures the security risk introduced by the administrator's actions?",
+    "options": [
+      "Malicious insider motivated by financial gain",
+      "Unintentional insider threat exploited through social engineering",
+      "External attacker exclusively, because the request originated outside",
+      "Shadow IT, because payroll data left the organization"
+    ],
+    "correct_answer": 2,
+    "explanation": "An authorized employee can create an unintentional insider threat by being deceived into exposing data. The external adversary and insider risk can coexist; the employee's actions do not establish malicious intent.",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "difficulty": "hard",
+    "question_type": "scenario",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0026",
+    "concept_id": "2.1-C07",
+    "prompt": "A threat actor uses stolen VPN credentials belonging to an employee, then installs remote access software on an internal workstation. Investigators confirm the operator is an unaffiliated criminal abroad. Which classification BEST describes the actor?",
+    "options": [
+      "Internal, because the workstation and VPN account are internal",
+      "External, because the operator is outside the organization despite using internal access",
+      "Insider, because any use of legitimate credentials changes actor origin",
+      "Ethical, because the attacker did not exploit a software vulnerability"
+    ],
+    "correct_answer": 2,
+    "explanation": "Actor origin depends on the operator's relationship to the organization, not on whether they use an internal device or legitimate credentials.",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "difficulty": "hard",
+    "question_type": "scenario",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0027",
+    "concept_id": "2.1-C09",
+    "prompt": "Two intrusions use the same commodity malware. In one, the operator follows a published playbook. In the other, the operator chains a newly discovered privilege-escalation flaw with custom evasion and adjusts tactics as defenders respond. What is the BEST conclusion?",
+    "options": [
+      "The malware family proves both operators have equal capability",
+      "The second operator demonstrates greater sophistication, regardless of shared tooling",
+      "The second operator must have nation-state funding",
+      "The first operator must be an employee"
+    ],
+    "correct_answer": 2,
+    "explanation": "Operational skill is evidenced by exploit development, chaining, evasion, and adaptation. Sharing commodity malware does not imply equal capability or establish affiliation.",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "difficulty": "hard",
+    "question_type": "scenario",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0028",
+    "concept_id": "2.1-C11",
+    "prompt": "A manufacturer reports two incidents: attackers copied unreleased product designs in the first; in the second they encrypted backups and demanded cryptocurrency. Which pairing BEST describes the primary motivation of each incident?",
+    "options": [
+      "First: espionage; second: financial gain",
+      "First: service disruption; second: espionage",
+      "First: revenge; second: ethical research",
+      "First: war; second: political activism"
+    ],
+    "correct_answer": 1,
+    "explanation": "The first incident seeks confidential intellectual property for an intelligence or competitive advantage, consistent with espionage. The ransom demand indicates financial gain in the second.",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "difficulty": "hard",
+    "question_type": "scenario",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0029",
+    "concept_id": "2.1-C13",
+    "prompt": "An attacker steals a CEO's private correspondence, threatens to publish it unless the CEO persuades the board to cancel a merger, and demands no money. Which motivation BEST characterizes the coercive behavior?",
+    "options": [
+      "Financial gain, because all extortion requires payment",
+      "Blackmail, because disclosure threats are used to force an action",
+      "Espionage, because any theft of messages is intelligence gathering",
+      "Ethical, because the demand is nonfinancial"
+    ],
+    "correct_answer": 2,
+    "explanation": "Blackmail involves threatening to disclose damaging information to coerce behavior; the demanded concession need not be monetary.",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "difficulty": "hard",
+    "question_type": "scenario",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0030",
+    "concept_id": "2.1-C15",
+    "prompt": "A group claims responsibility for disrupting a city service to protest a new surveillance law. Investigators also find that a separate criminal affiliate sold stolen records. Which evidence MOST directly supports classifying the group's stated motivation as political rather than financial?",
+    "options": [
+      "The group used a distributed denial-of-service technique",
+      "The group's public demands explicitly seek repeal of the surveillance law",
+      "A separate affiliate profited from stolen records",
+      "The target was a municipal network"
+    ],
+    "correct_answer": 2,
+    "explanation": "Explicit ideological demands support a political motive. Attack technique, target sector, and another affiliate's profits do not independently establish the group's primary motivation.",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "difficulty": "hard",
+    "question_type": "scenario",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0031",
+    "concept_id": "2.1-C06",
+    "prompt": "A team deploys an unsanctioned analytics service. Weeks later, attackers exploit a vulnerability in that service to steal customer records. Which statement BEST distinguishes the security issue from the subsequent attack?",
+    "options": [
+      "Shadow IT is the unapproved service deployment; data theft is a separate malicious act enabled by the exposure",
+      "Shadow IT means the analytics team intentionally stole the records",
+      "The data theft makes the service an authorized security tool",
+      "The deployment alone proves a nation-state attack"
+    ],
+    "correct_answer": 1,
+    "explanation": "Shadow IT is technology used outside approved IT governance. It can increase exposure, but its existence does not itself establish a malicious insider or identify the external attacker.",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "difficulty": "hard",
+    "question_type": "scenario",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0032",
+    "concept_id": "2.1-C19",
+    "prompt": "During a declared armed conflict, a military cyber unit compromises an adversary's railway dispatch network to delay troop transport. The operation also interrupts civilian deliveries. Which assessment BEST distinguishes motivation from effect?",
+    "options": [
+      "The motivation is financial gain and the effect is espionage",
+      "The motivation is war and an effect is service disruption",
+      "The motivation is revenge and the effect is data exfiltration",
+      "The motivation is ethical research and the effect is blackmail"
+    ],
+    "correct_answer": 2,
+    "explanation": "The operation supports a military campaign, making war its overarching motivation. Disrupted railway services are an operational effect, not necessarily the underlying motive.",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "difficulty": "hard",
+    "question_type": "scenario",
+    "source": "Original Security+ SY0-701 practice question"
+  },
+  {
+    "question_id": "Q0033",
+    "concept_id": "2.1-C08",
+    "prompt": "An incident response team finds a long-running campaign using rented servers, expensive purchased exploits, and around-the-clock operators. A manager argues this proves nation-state sponsorship. What should the analyst conclude?",
+    "options": [
+      "High resources and funding are evident, but sponsorship cannot be determined from spending alone",
+      "Purchased exploits are used only by nation-state actors",
+      "Rented infrastructure proves an unskilled attacker",
+      "Around-the-clock activity proves an internal actor"
+    ],
+    "correct_answer": 1,
+    "explanation": "Infrastructure, exploit procurement, and staffing suggest significant resources. Criminal groups and other actors can also be well funded; sponsorship requires independent evidence.",
+    "domain": "2.0",
+    "objective_id": "2.1",
+    "difficulty": "hard",
+    "question_type": "scenario",
+    "source": "Original Security+ SY0-701 practice question"
+  }
+]
