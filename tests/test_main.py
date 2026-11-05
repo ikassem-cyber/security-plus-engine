@@ -140,6 +140,48 @@ class TestQuestionMetadata(unittest.TestCase):
 class TestInteractiveQuiz(unittest.TestCase):
 
 
+    def test_quiz_limit_restricts_question_count(self):
+        """A limited quiz asks only the requested number of questions."""
+        from security_plus_engine.main import run_quiz
+
+        with patch("builtins.input", side_effect=["2", "2"]):
+            with patch("sys.stdout", new_callable=StringIO) as output:
+                run_quiz(limit=2)
+
+        self.assertIn("You have 2 questions.", output.getvalue())
+        self.assertIn("Score: 2/2", output.getvalue())
+        self.assertEqual(self.mock_save_history.call_count, 2)
+
+
+    def test_quiz_rejects_invalid_limit(self):
+        """Quiz limits must be positive integers."""
+        from security_plus_engine.main import run_quiz
+
+        with self.assertRaisesRegex(ValueError, "at least 1"):
+            run_quiz(limit=0)
+
+        self.mock_save_history.assert_not_called()
+
+
+    def test_interrupted_quiz_preserves_completed_answers(self):
+        """Completed answers are saved before a quiz is interrupted."""
+
+        from security_plus_engine.main import run_quiz
+
+        with patch("builtins.input", side_effect=["2", "1", KeyboardInterrupt]):
+            with self.assertRaises(KeyboardInterrupt):
+                run_quiz()
+
+        self.assertEqual(self.mock_save_history.call_count, 2)
+
+        saved_history = self.mock_save_history.call_args.args[0]
+
+        self.assertEqual(len(saved_history), 2)
+        self.assertEqual(saved_history[0]["question_id"], "Q0001")
+        self.assertEqual(saved_history[1]["question_id"], "Q0002")
+        self.assertTrue(saved_history[0]["correct"])
+        self.assertFalse(saved_history[1]["correct"])
+
     def test_adaptive_quiz_prioritizes_weaker_concepts(self):
         authentication_question = replace(
             SAMPLE_QUESTIONS[1],
@@ -182,7 +224,7 @@ class TestInteractiveQuiz(unittest.TestCase):
 
         self.assertIn("Score: 2/2", text)
 
-        self.mock_save_history.assert_called_once()
+        self.assertEqual(self.mock_save_history.call_count, 2)
 
         saved_history = self.mock_save_history.call_args.args[0]
 
@@ -237,7 +279,7 @@ class TestInteractiveQuiz(unittest.TestCase):
 
         self.assertNotIn("Which protocol is commonly used", text)
 
-        self.mock_save_history.assert_called_once()
+        self.assertEqual(self.mock_save_history.call_count, 2)
 
         saved_history = self.mock_save_history.call_args.args[0]
 
@@ -327,7 +369,7 @@ class TestInteractiveQuiz(unittest.TestCase):
                 run_quiz()
 
         self.mock_load_history.assert_called_once()
-        self.mock_save_history.assert_called_once()
+        self.assertEqual(self.mock_save_history.call_count, 3)
 
         saved_history = self.mock_save_history.call_args.args[0]
 

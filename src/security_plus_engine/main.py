@@ -10,7 +10,7 @@ from security_plus_engine.history import (
     load_history,
     save_history,
     calculate_historical_concept_performance,
-    
+
 )
 
 from security_plus_engine.question_bank import load_question_bank
@@ -205,12 +205,14 @@ def check_answer(question: Question, answer: int) -> bool:
     return answer == question.correct_answer
 
 
-def run_quiz(adaptive: bool = False) -> None:
+def run_quiz(
+    adaptive: bool = False,
+    limit: int | None = None,
+) -> None:
     score = 0
     user_answers = []
     session_attempts = []
 
-    
     history = load_history()
 
     if adaptive:
@@ -225,6 +227,11 @@ def run_quiz(adaptive: bool = False) -> None:
         print("No validated questions are available for this quiz mode.")
         return
 
+    if limit is not None:
+        if limit < 1:
+            raise ValueError("Quiz limit must be at least 1.")
+
+        quiz_questions = quiz_questions[:limit]
 
     print("\n=== Security+ SY0-701 Study Engine ===")
     print(f"You have {len(quiz_questions)} questions.\n")
@@ -249,13 +256,15 @@ def run_quiz(adaptive: bool = False) -> None:
             print(f"Please enter a number from 1 to {len(question.options)}.")
 
         user_answers.append(int(answer))
-        session_attempts.append(
-            create_attempt_record(
+        attempt = create_attempt_record(
             question,
             answer=int(answer),
             correct=check_answer(question, int(answer)),
-            )
         )
+        session_attempts.append(attempt)
+        history.append(attempt)
+        save_history(history)
+
 
         if check_answer(question, int(answer)):
             print("Correct!")
@@ -266,8 +275,8 @@ def run_quiz(adaptive: bool = False) -> None:
 
         print(f"Explanation: {question.explanation}\n")
 
-    history.extend(session_attempts)
-    save_history(history)
+
+
     percentage = score / len(quiz_questions) * 100
 
     print("=== Quiz Results ===")
@@ -278,10 +287,10 @@ def run_quiz(adaptive: bool = False) -> None:
     print("\n=== Domain Performance ===")
 
     domain_results = calculate_domain_performance(quiz_questions, user_answers)
-    
+
     for domain_id, results in domain_results.items():
             domain_name = DOMAINS[domain_id]["name"]
-    
+
             if results["total"] == 0:
                 print(f"{domain_name}: Not attempted")
             else:
@@ -291,10 +300,10 @@ def run_quiz(adaptive: bool = False) -> None:
                     f"({results['accuracy']:.1f}%)"
                 )
 
-    
+
     print("\n=== Validated Concept Performance ===")
 
-    
+
     validated_questions = []
     validated_answers = []
 
@@ -322,7 +331,7 @@ def run_quiz(adaptive: bool = False) -> None:
             )
 
 
-    
+
 
 
 if __name__ == "__main__":
@@ -336,7 +345,17 @@ if __name__ == "__main__":
         help="Use historical performance to prioritize weaker concepts",
     )
 
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Maximum number of questions in the quiz session",
+    )
+
     args = parser.parse_args()
 
-    run_quiz(adaptive=args.adaptive)
+    run_quiz(
+        adaptive=args.adaptive,
+        limit=args.limit,
+    )
 
