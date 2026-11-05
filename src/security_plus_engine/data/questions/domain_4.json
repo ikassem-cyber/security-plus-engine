@@ -1,0 +1,20 @@
+[
+  {
+    "question_id": "Q0001",
+    "domain": "4.0",
+    "objective_id": "4.1",
+    "concept_id": "4.1-C01",
+    "difficulty": "foundational",
+    "question_type": "MCQ",
+    "prompt": "Which protocol is commonly used to securely browse websites?",
+    "options": [
+      "FTP",
+      "HTTPS",
+      "Telnet",
+      "SNMP"
+    ],
+    "correct_answer": 2,
+    "explanation": "HTTPS uses TLS to protect communication between a browser and a web server.",
+    "source": "Original sample question"
+  }
+]

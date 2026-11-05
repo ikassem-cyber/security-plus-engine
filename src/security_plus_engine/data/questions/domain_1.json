@@ -1,0 +1,38 @@
+[
+  {
+    "question_id": "Q0002",
+    "domain": "1.0",
+    "objective_id": "1.2",
+    "concept_id": "1.2-C06",
+    "difficulty": "foundational",
+    "question_type": "MCQ",
+    "prompt": "Which security principle requires users to receive only the permissions they need?",
+    "options": [
+      "Separation of duties",
+      "Least privilege",
+      "Non-repudiation",
+      "Open access"
+    ],
+    "correct_answer": 2,
+    "explanation": "Least privilege limits access rights to only what is necessary for a user's role.",
+    "source": "Original sample question"
+  },
+  {
+    "question_id": "Q0003",
+    "domain": "1.0",
+    "objective_id": "1.4",
+    "concept_id": "1.4-C11",
+    "difficulty": "foundational",
+    "question_type": "MCQ",
+    "prompt": "Which cryptographic method uses the same secret key to encrypt and decrypt data?",
+    "options": [
+      "Asymmetric encryption",
+      "Hashing",
+      "Symmetric encryption",
+      "Digital signatures"
+    ],
+    "correct_answer": 3,
+    "explanation": "Symmetric encryption uses the same secret key for encryption and decryption.",
+    "source": "Original sample question"
+  }
+]

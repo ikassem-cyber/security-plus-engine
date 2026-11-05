@@ -10,7 +10,10 @@ from security_plus_engine.history import (
     load_history,
     save_history,
     calculate_historical_concept_performance,
+    
 )
+
+from security_plus_engine.question_bank import load_question_bank
 
 @dataclass
 class Question:
@@ -51,57 +54,16 @@ DOMAINS = {
 }
 
 
-QUESTIONS = [
-    Question(
-        question_id="Q0001",
-        domain="4.0",
-        objective_id="4.1",
-        concept_id="4.1-C01",
-        difficulty="foundational",
-        question_type="MCQ",
-        prompt="Which protocol is commonly used to securely browse websites?",
-        options=["FTP", "HTTPS", "Telnet", "SNMP"],
-        correct_answer=2,
-        explanation="HTTPS uses TLS to protect communication between a browser and a web server.",
-        source="Original sample question",
-    ),
-    Question(
-        question_id="Q0002",
-        domain="1.0",
-        objective_id="1.2",
-        concept_id="1.2-C06",
-        difficulty="foundational",
-        question_type="MCQ",
-        prompt="Which security principle requires users to receive only the permissions they need?",
-        options=[
-            "Separation of duties",
-            "Least privilege",
-            "Non-repudiation",
-            "Open access",
-        ],
-        correct_answer=2,
-        explanation="Least privilege limits access rights to only what is necessary for a user's role.",
-        source="Original sample question",
-    ),
-    Question(
-        question_id="Q0003",
-        domain="1.0",
-        objective_id="1.4",
-        concept_id="1.4-C11",
-        difficulty="foundational",
-        question_type="MCQ",
-        prompt="Which cryptographic method uses the same secret key to encrypt and decrypt data?",
-        options=[
-            "Asymmetric encryption",
-            "Hashing",
-            "Symmetric encryption",
-            "Digital signatures",
-        ],
-        correct_answer=3,
-        explanation="Symmetric encryption uses the same secret key for encryption and decryption.",
-        source="Original sample question",
-    ),
-]
+QUESTION_BANK_DIRECTORY = (
+    Path(__file__).resolve().parent
+    / "data"
+    / "questions"
+)
+
+QUESTIONS = load_question_bank(
+    QUESTION_BANK_DIRECTORY,
+    Question,
+)
 
 def calculate_domain_performance(
     questions: list[Question],
