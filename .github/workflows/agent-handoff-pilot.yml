@@ -5,6 +5,7 @@ name: Agent Handoff Pilot
 
 permissions:
   contents: read
+  id-token: write
 
 concurrency:
   group: agent-handoff-pilot
