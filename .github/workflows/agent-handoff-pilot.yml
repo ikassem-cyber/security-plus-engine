@@ -29,11 +29,16 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           claude_args: >-
-            --max-turns 3
-            --json-schema '{"type":"object","properties":{"assessment":{"type":"string"}},"required":["assessment"],"additionalProperties":false}'
+            --max-turns 8
+            --disallowedTools "Bash,Edit,MultiEdit,Write,NotebookEdit,WebFetch,WebSearch,Task,Agent"
+            --json-schema '{"type":"object","properties":{"assessment":{"type":"string","maxLength":4000}},"required":["assessment"],"additionalProperties":false}'
           prompt: |
             Perform a brief read-only assessment of this Security+
             study engine repository.
+
+            Budget: use at most 4 read-only tool calls (Read, Glob, Grep).
+            Start with README.md, CLAUDE.md, and a single Glob of src/ and
+            tests/. Do not run commands or tests; the shell is unavailable.
 
             Identify one small, low-risk improvement suitable for
             a future automation test.
@@ -44,7 +49,8 @@ jobs:
             Do not begin a formal mastery audit or propose implementing
             the unapproved evidence refactor.
 
-            Return a concise assessment in the required JSON schema.
+            As soon as you have enough information, return a concise
+            assessment (under 300 words) in the required JSON schema.
 
       - name: Prepare Claude handoff
         env:
